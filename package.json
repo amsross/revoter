@@ -9,7 +9,7 @@
     "prebundle": "npm run build",
     "bundle": "browserify lib/js/src/App.js --node --standalone handler -g [uglifyify -cm] > handler.js",
     "predeploy": "npm run bundle",
-    "deploy": "sls deploy -v",
+    "deploy": "sls deploy",
     "prelocal": "npm run bundle",
     "local": "AWS_REGION=us-east-1 sls offline start --stage dev"
   },

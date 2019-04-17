@@ -10,12 +10,12 @@ script:
 deploy:
 - provider: script
   skip_cleanup: true
-  script: npm run deploy -- --stage dev
+  script: npm run deploy -- -v --stage dev
   on:
     branch: staging
 - provider: script
   skip_cleanup: true
-  script: npm run deploy -- --stage prod
+  script: npm run deploy -- -v --stage prod
   on:
     branch: master
 env:
