@@ -32,7 +32,7 @@ external get: (request, Params.t, callback) => Future.t(string) = "get";
 [@bs.new] [@bs.module "request"] external jar: unit => jar = "jar";
 [@bs.module "request"] external defaults: Options.t => request = "defaults";
 
-let make = (baseUrl, headers) => {
+let make = (baseUrl, headers): get => {
   let req =
     defaults(
       Options.make(
