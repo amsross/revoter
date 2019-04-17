@@ -1,0 +1,34 @@
+{
+  "name": "revoter",
+  "version": "0.1.0",
+  "scripts": {
+    "clean": "bsb -clean-world",
+    "prebuild": "npm run clean",
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "prebundle": "npm run build",
+    "bundle": "browserify lib/js/src/App.js --node --standalone handler -g [uglifyify -cm] > handler.js",
+    "predeploy": "npm run bundle",
+    "deploy": "sls deploy -v",
+    "prelocal": "npm run bundle",
+    "local": "AWS_REGION=us-east-1 sls offline start --stage dev"
+  },
+  "author": {
+    "name": "Matt Ross",
+    "url": "https://www.mattross.io"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.404.0",
+    "browserify": "^16.2.3",
+    "bs-platform": "^5.0.2",
+    "cheerio": "^1.0.0-rc.3",
+    "nodemon": "^1.18.11",
+    "request": "^2.88.0",
+    "serverless": "^1.40.0",
+    "serverless-domain-manager": "^3.2.1",
+    "serverless-offline": "^4.9.4",
+    "serverless-prune-plugin": "^1.3.2",
+    "uglifyify": "^5.0.1"
+  }
+}
