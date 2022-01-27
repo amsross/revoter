@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "aws-sdk": "^2.404.0",
+    "aws-sdk": "^2.814.0",
     "browserify": "^16.2.3",
     "bs-platform": "^5.0.2",
     "cheerio": "^1.0.0-rc.3",
